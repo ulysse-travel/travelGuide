@@ -24,6 +24,12 @@
     },
     "classIcon": {
       "type": "string"
+    },
+    "thing_to_see": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::thing-to-see.thing-to-see",
+      "inversedBy": "tags"
     }
   }
 }

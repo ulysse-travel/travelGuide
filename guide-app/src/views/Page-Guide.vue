@@ -35,21 +35,18 @@
             <a :href='goodPlace.attributes.url' target="_blank" class="card-goodplaces ">
               <div class="img"><img :src='"http://localhost:1337" + goodPlace.attributes.linkImg'></div>
               <div class="infos">
-                <div class="left">
-                  <div class="title">
-                    <ul>
-                      <li class="tag" v-for="tag in guides.attributes.tags" :key="tag.id">
-                        <i :class='tag.attributes.classIcon'></i>
-                      </li>
-                    </ul>                   
-                    {{ goodPlace.attributes.name }}
-                    </div>
-                  <div class="where"><span class="where-i"></span> {{ goodPlace.attributes.place }}</div>                
-                </div>
-                <div class="right">
+                <div class="left">                 
+                  <div class="title">      
+                    <div class="tags_bottom">
+                      <div class="tag"><i :class='goodPlace.attributes.Category'></i> </div>
+                    </div>          
+                    <div class="content">
+                      <div class="name">{{ goodPlace.attributes.name }}</div>
+                      <div class="where">{{ goodPlace.attributes.place }}</div>   
+                    </div>        
+                  </div>
                   <div class="like"><span class="iconYeah"></span>{{ goodPlace.attributes.like }}</div>    
                 </div>
-                <div class="clear"></div>
               </div>
             </a>
           </div>
@@ -154,6 +151,34 @@
     }      
   }
 }
+.tags_bottom{
+  margin: 0;
+  padding: 0;
+  .tag{
+    margin-right: 10px;
+    border: 2px solid #0F2041;
+    padding: 10px;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+  }
+  i{
+    display: block;
+    background-repeat: no-repeat;
+    margin: auto;
+    &.hotel{
+      background: url("@/assets/hotels-black.svg");
+      width: 22.5px;
+      height: 25.5px;
+    }
+    &.food{
+      background: url("@/assets/food-black.svg");
+      width: 17.5px;
+      height: 25.5px;
+    }      
+  }
+}
 .btn{
   float: right;
 }
@@ -178,7 +203,9 @@
   .infos{
     padding: 30px;
     .left{
-      float: left;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
       .where-i{
         display: inline-block;
         margin: auto;
@@ -190,21 +217,29 @@
         margin-right: 5px;       
       }
     }
-    .right{
-      float: right;
-    }
     .title{
       font-size: 22px;
       font-weight: 600;
+      display: flex;
+      align-items: center;  
+      width: 100%;
+      .name{
+        width: 70%;
+        }
+      .content{
+        width: 100%;
+      }
     }
     .where{
-      margin-top: 10px;
-      font-size: 17px;
+      font-size: 15px;
       opacity: 0.6;
+      font-weight: 500;
     }
     .like{
       font-size: 14px;
       font-weight: 600;
+      display: flex;
+      align-items: center;      
       .iconYeah{
         display: inline-block;
         margin: auto;

@@ -23,6 +23,11 @@
 export default {
   name: 'App',
   components: {
+  },
+  watch: {
+    '$route' (to) {
+      document.title = to.meta.title || 'Ulysse'
+    }
   }
 }
 </script>

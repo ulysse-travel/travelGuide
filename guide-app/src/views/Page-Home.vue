@@ -216,10 +216,17 @@
     .tag{
       float: left;
       margin-right: 10px;
+      border: 2px solid white;
+      padding: 10px;
+      border-radius: 10px;
+      height: 50px;
+      width: 50px;
+      text-align: center;
     }
     i{
       display: block;
       background-repeat: no-repeat;
+      margin: auto;
       &.hotel{
         background: url("@/assets/hotels.svg");
         width: 22.5px;

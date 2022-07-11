@@ -8,12 +8,20 @@ const routes = [
     path: "/",
     name: "Page-Home",
     component: Home,
+    meta: {
+      title: 'Les guides Ulysse',
+      content:''
+    }  
   },
   {
     path: "/:pageId/:pageName",
     name: "Page-guide",
     props: true,
-    component: () => import('../views/Page-Guide.vue')
+    component: () => import('../views/Page-Guide.vue'),
+    meta: {
+      title: ":pageName - Les guides Ulysse",
+      content:''
+    }      
   }
 ];
 
