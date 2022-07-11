@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tags",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "guides_lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::guides-list.guides-list",
+      "inversedBy": "tags"
+    },
+    "classIcon": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guides_lists",
+  "info": {
+    "singularName": "guides-list",
+    "pluralName": "guides-lists",
+    "displayName": "guidesList",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "numberOfThings": {
+      "type": "integer"
+    },
+    "thanks": {
+      "type": "richtext"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "guides_lists"
+    },
+    "thing_to_sees": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::thing-to-see.thing-to-see",
+      "mappedBy": "guides_lists"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "linkImg": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

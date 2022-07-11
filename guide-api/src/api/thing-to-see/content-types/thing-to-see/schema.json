@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "thing_to_sees",
+  "info": {
+    "singularName": "thing-to-see",
+    "pluralName": "thing-to-sees",
+    "displayName": "thing to see",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "guides_lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::guides-list.guides-list",
+      "inversedBy": "thing_to_sees"
+    },
+    "like": {
+      "type": "integer"
+    },
+    "linkImg": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
