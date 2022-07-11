@@ -13,7 +13,10 @@ body{
     background: url("@/assets/ulysse.svg");
     width: 91px;
     height: 32px;
+    margin: auto;
     margin-top: 30px;
+    position: relative;
+    opacity: 0;
 } 
 .clear{
     clear: both;
@@ -77,7 +80,7 @@ b{
 }
 .top{
     @include mobile{
-        margin-top: 60px!important;
+        margin-top: 0px!important;
         margin-bottom: 30px!important;
         text-align: center;
         .title{
@@ -101,16 +104,27 @@ b{
     padding-top: 200px;
     padding-bottom: 200px;
     margin-top: 80px;
+    @include mobile{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }    
 .title-f{
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 30px;
+    @include mobile{
+        font-size: 30px;
+    }
 }
 .content-f{
     font-size: 22px;
     width: 80%;
     line-height: 24px;
     opacity: 0.6;
+    @include mobile{
+        width: 100%;
+        margin-bottom: 30px;
+    }    
 }
 .title-s{
     font-size: 12px;

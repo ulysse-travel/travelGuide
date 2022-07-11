@@ -3,7 +3,7 @@
     <div id="container" class="container" v-if="guides">
       <div class="col col-wide-12 col-desktop-12 col-tablet-12 col-mobile-12">
         <router-link :to="{ name: 'Page-Home'}" >
-          <div class="logo"></div>s
+          <div class="logo"></div>
         </router-link>
       </div>
       <div class="col col-wide-12 col-desktop-12 col-tablet-12 col-mobile-12">
@@ -93,9 +93,13 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.logo{
+  opacity: 1;
+}
 .top{
   margin-top: 60px;
   margin-bottom: 80px;
+  text-align: center;
   .title{
     font-size: 80px;
     font-weight: 600;
@@ -105,8 +109,9 @@
     margin-top: 30px;
   }
   .breadcrumb{
-    font-size: 11px;
+    font-size: 12px;
     margin-bottom: 15px;
+    opacity: 0.5;
     a{
       color: #6F798D;
       &:hover{
@@ -236,6 +241,7 @@ export default {
     }
   },
   async mounted () {
+
     try {
       const response = await axios.get('http://localhost:1337/api/guides-lists/' + this.pageId + '?populate=%2A')
       this.guides = response.data.data;

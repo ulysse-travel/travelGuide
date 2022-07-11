@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="container" class="container">
+    <div id="container" class="container" ref="myContainer">
       <div class="col col-wide-12 col-desktop-12 col-tablet-12 col-mobile-12">
         <router-link :to="{ name: 'Page-Home'}" >
           <div class="logo"></div>
@@ -32,6 +32,7 @@
               </ul>
               <div class="clear"></div>
               <div class="thanks"><b>Merci :</b> {{ guideCard.attributes.thanks }}   </div>
+              <div class="arrow"></div>
             </div>
           </router-link>
         </div>
@@ -88,6 +89,8 @@
   position: relative;
   margin: auto;
   width: 600px;
+  top:-400px;
+  z-index: 2;
   span{
     &.top{
       font-size:17px;
@@ -115,10 +118,14 @@
   }
 }
 .plane{
-  height: 524px;
-  background-image: url("@/assets/plane.png");
+  height: 1420px;
+  background-image: url("@/assets/plane.jpg");
   background-position: center;
   background-size: cover;
+  position: relative;
+  top: -1000px;
+  z-index: 1;
+  margin-bottom: -870px;
 }
 .flex{
   display: flex;
@@ -134,6 +141,7 @@
   box-shadow: 0px 14px 24px rgba(117, 114, 156, 0.3);
   position: relative;
   transition:all 0.2s linear;
+  z-index: 2;
   top: 0;
   &:last-child {
     //margin-bottom: 30px;
@@ -149,6 +157,7 @@
   }
   .card-content{
     padding: 60px;
+    position: relative;
     a{
       color: #fff;
     }
@@ -179,6 +188,16 @@
           background-size: cover;          
         }
       }
+    }
+    .arrow{
+      background-image: url("@/assets/arrow.png");
+      background-size: cover;
+      width: 35px;
+      height: 35px;
+      display: block;
+      position: absolute;
+      right: 60px;
+      bottom: 60px;
     }
   }
   .title{
@@ -217,13 +236,16 @@
     margin-top:30px;
     font-size: 14px;
     line-height: 18px;
+    width: 80%;
   }
 }
 .share{
   text-align: center;
   //margin-top: 80px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   font-size: 18px;
+  position: relative;
+  z-index: 2;
   span{
     opacity: 0.8;
     margin-top: 10px;
@@ -239,6 +261,7 @@
 </style>
 <script>
 import axios from 'axios'
+import { gsap } from "gsap"
 
 export default {
   name: 'Page-Home',
@@ -252,13 +275,18 @@ export default {
     }
   },
   async mounted () {
+
+    gsap.fromTo('.logo',{opacity:0 }, {opacity: 1 , duration: 2 })
+    gsap.fromTo('.header',{opacity:0 }, {opacity: 1 , y: 400 , duration: 1 })
+    gsap.fromTo('.plane',{opacity:0 }, {opacity: 1 , y: 1000 , duration: 1 })
+
     try {
       const response = await axios.get('http://localhost:1337/api/guides-lists?populate=%2A', this.modifiedData)
       this.guides = response.data.data;
     } catch (error) {
       this.error = error;
     }
-  }
+  }  
 }
 </script>
  
