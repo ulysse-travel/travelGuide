@@ -22,7 +22,7 @@
       <div class="filters col col-wide-12 col-desktop-12 col-tablet-12 col-mobile-12">
         <div class="tags">
           <ul>
-            <li class="tag" v-for="tag in guides.tags" :key="tag.id">
+            <li class="tag" v-for="tag in guides.travel_guides_tags" :key="tag.id">
               <i :class='tag.class_icon'></i>
             </li>
           </ul>
