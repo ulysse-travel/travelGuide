@@ -22,7 +22,7 @@
             <div class="card-content">
               <div class="hublot">
                 <div class="hublot-one"></div>
-                <div class="img"><img :src='"https://bretzel.fly.dev" + guideCard.linkImg'></div>
+                <div class="img"><img :src='"https://bretzel.fly.dev" + guideCard.img.url'></div>
               </div>
               <div class="title">{{ guideCard.title }}</div>
               <div class="numbers">{{ guideCard.number_of_things }} bonnes adresses</div>
