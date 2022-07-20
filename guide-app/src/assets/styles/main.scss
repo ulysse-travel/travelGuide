@@ -95,11 +95,15 @@ b{
     } 
 }
 .card-guide{
+    .title{
+        min-height: 100px;
+    }
     @include mobile{
         width: 100%!important;
         .title{
             font-size: 35px!important;
             margin-top: 0px!important;
+            min-height: 0px;
         }
     }
 }

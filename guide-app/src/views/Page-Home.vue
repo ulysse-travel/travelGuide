@@ -27,15 +27,17 @@
               <div class="title">
                 {{ guideCard.title }} 
               </div>
-              <div class="numbers">{{ guideCard.number_of_things }} bonnes adresses</div>
-              <ul class="tags">
-                <li class="tag" v-for="tag in guideCard.travel_guides_tags" :key="tag.id">
-                  <i :class='tag.class_icon'></i>
-                </li>
-              </ul>
-              <div class="clear"></div>
-              <div class="thanks"><b>Merci :</b> {{ guideCard.thanks }} </div>
-              <div class="arrow"></div>
+              <div class="align-bottom">
+                <div class="numbers">{{ guideCard.number_of_things }} bonnes adresses</div>
+                <ul class="tags">
+                  <li class="tag" v-for="tag in guideCard.travel_guides_tags" :key="tag.id">
+                    <i :class='tag.class_icon'></i>
+                  </li>
+                </ul>
+                <div class="clear"></div>
+                <div class="thanks"><b>Merci :</b> {{ guideCard.thanks }} </div>
+                <div class="arrow"></div>
+              </div>
             </div>
           </router-link>
         </div>
