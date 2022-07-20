@@ -22,9 +22,11 @@
             <div class="card-content">
               <div class="hublot">
                 <div class="hublot-one"></div>
-                <div class="img"><img :src='"https://bretzel.fly.dev/" + guideCard.img.formats.thumbnail.url'></div>
+                <div class="img" v-for="image in guideCard.img" :key="image.id"><img :src='"https://bretzel.fly.dev" + image.url'></div>
               </div>
-              <div class="title">{{ guideCard.title }}</div>
+              <div class="title">
+                {{ guideCard.title }} 
+              </div>
               <div class="numbers">{{ guideCard.number_of_things }} bonnes adresses</div>
               <ul class="tags">
                 <li class="tag" v-for="tag in guideCard.travel_guides_tags" :key="tag.id">
@@ -309,6 +311,7 @@ export default {
       guides: [],
       modifiedData: {
         tags: [],
+        img: [],
       },
       error: null
     }

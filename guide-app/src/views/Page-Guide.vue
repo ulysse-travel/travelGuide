@@ -34,7 +34,7 @@
         <div class="col col-wide-4 col-desktop-4 col-tablet-4 col-mobile-12" v-for="goodPlace in guides.travel_places"
           :key="goodPlace.id">
           <a :href='goodPlace.url' target="_blank" class="card-goodplaces ">
-            <div class="img"><img :src='"https://bretzel.fly.dev" + goodPlace.linkImg'></div>
+            <div class="img" v-for="image in goodPlace.img" :key="image.id"><img :src='"https://bretzel.fly.dev" + image.url'></div>
             <div class="infos">
               <div class="left">
                 <div class="title">
