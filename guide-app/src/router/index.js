@@ -10,8 +10,8 @@ const routes = [
     component: Home,
     meta: {
       title: 'Les guides Ulysse',
-      content:''
-    }  
+      content: ''
+    }
   },
   {
     path: "/:pageId/:pageName",
@@ -20,8 +20,8 @@ const routes = [
     component: () => import('../views/Page-Guide.vue'),
     meta: {
       title: ":pageName - Les guides Ulysse",
-      content:''
-    }      
+      content: ''
+    }
   }
 ];
 
@@ -29,8 +29,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior() {
-    document.getElementById('app').scrollIntoView({behavior:'smooth'});
-  }  
+    document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+  }
 });
 
 export default router;
