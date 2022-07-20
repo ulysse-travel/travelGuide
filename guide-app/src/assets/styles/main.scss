@@ -81,18 +81,25 @@ b{
 .top{
     @include mobile{
         margin-top: 0px!important;
-        margin-bottom: 30px!important;
+        margin-bottom: 0px!important;
+        padding-bottom: 10px!important;
         text-align: center;
         .title{
             font-size: 45px!important;
         }
     }
 }
+.plane{
+    @include mobile{
+        height: 1100px!important;
+    } 
+}
 .card-guide{
     @include mobile{
         width: 100%!important;
         .title{
-            font-size: 40px;
+            font-size: 40px!important;
+            margin-top: 0px!important;
         }
     }
 }
