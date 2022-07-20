@@ -15,7 +15,7 @@
             {{ guides.title }}
           </div>
           <div class="numberOfThings">
-            {{ guides.numberOfThings }} bonnes adresses
+            {{ guides.number_of_things }} bonnes adresses
           </div>
         </div>
       </div>
