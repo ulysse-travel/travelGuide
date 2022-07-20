@@ -27,7 +27,7 @@
               <div class="title">{{ guideCard.title }}</div>
               <div class="numbers">{{ guideCard.number_of_things }} bonnes adresses</div>
               <ul class="tags">
-                <li class="tag" v-for="tag in guideCard.tags" :key="tag.id">
+                <li class="tag" v-for="tag in guideCard.travel_guides_tags" :key="tag.id">
                   <i :class='tag.class_icon'></i>
                 </li>
               </ul>
